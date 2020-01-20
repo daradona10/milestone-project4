@@ -9,7 +9,8 @@
 
                 <h3>{{ product.name }}</h3>
                 <p class="product-description">{{ product.description }}</p>
-                <p>{{ product.price }}</p>
+                <p>PRICE {{ product.price }}</p>
+                <p>RATING {{ product.rating }}</p>
 
                 <form method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
