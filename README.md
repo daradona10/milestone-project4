@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/daradona10/milestone-project4.svg?branch=master)](https://travis-ci.org/daradona10/milestone-project4)
 # Code Institute
 
 Welcome daradona10,
