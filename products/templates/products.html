@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
+{% block head_js %}
+<script type="text/javascript">
+    function getVal(sel) {
+        $(sel).parent().parent().find('#item_size').val(sel.value);
+    }
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="row row-flex">
     {% for product in products %}
@@ -11,11 +19,22 @@
                 <p class="product-description">{{ product.description }}</p>
                 <p>PRICE {{ product.price }}</p>
                 <p>RATING {{ product.rating }}</p>
-                <p>SIZE {{ product.size }}</p>
+                {% if product.category == 'jersey' or product.category == 'shorts' or product.category == 'socks' %}
+                    <p>SIZE:
+                        <select class="product_size" onchange="getVal(this)">
+                            <option>XS</option>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </p>
+                {% endif %}
 
-                <form method="post" action="{% url 'add_to_cart' product.id %}">
+                <form method="post" action="{% url 'add_to_cart' product.id %}" class="add_to_cart_form">
                     {% csrf_token %}
                     <div class="input-group">
+                        <input id="item_size" type="hidden" name="size" type="text" class="form-control" value="XS">
                         <input name="quantity" type="number" min="1" max="20" class="form-control" placeholder="Quantity">
                         <span class="input-group-btn">
                             <button class="btn btn-success" type="submit">Add</button>
