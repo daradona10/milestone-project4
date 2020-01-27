@@ -14,7 +14,7 @@
             <h3>{{ item.product.name }}</h3>
             <p class="product-description">{{ item.product.description }}</p>
             <p>PRICE: {{ item.product.price }}</p>
-            {% if item.product.category == 'jersey' or item.product.category == 'shorts' or item.product.category == 'socks' %}
+            {% if product.category == 'jersey' or product.category == 'shorts' or product.category == 'socks' or product.category == 'base_layer' %}
                 <p>SIZE: {{ item.size }}</p>
             {% endif %}
             <p>

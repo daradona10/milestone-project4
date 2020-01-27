@@ -20,7 +20,7 @@ def all_socks(request):
     return render(request, "products.html", {"products": products})
 
 def all_base_layers(request):
-    products = Product.objects.filter(category='base_layers')
+    products = Product.objects.filter(category='base_layer')
     return render(request, "products.html", {"products": products})
 
 def all_footballs(request):

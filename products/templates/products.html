@@ -19,7 +19,7 @@
                 <p class="product-description">{{ product.description }}</p>
                 <p>PRICE {{ product.price }}</p>
                 <p>RATING {{ product.rating }}</p>
-                {% if product.category == 'jersey' or product.category == 'shorts' or product.category == 'socks' %}
+                {% if product.category == 'jersey' or product.category == 'shorts' or product.category == 'socks' or product.category == 'base_layer' %}
                     <p>SIZE:
                         <select class="product_size" onchange="getVal(this)">
                             <option>XS</option>
