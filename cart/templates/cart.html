@@ -13,7 +13,10 @@
         <div class="caption">
             <h3>{{ item.product.name }}</h3>
             <p class="product-description">{{ item.product.description }}</p>
-            <p>{{ item.product.price }}</p>
+            <p>PRICE: {{ item.product.price }}</p>
+            {% if item.product.category == 'jersey' or item.product.category == 'shorts' or item.product.category == 'socks' %}
+                <p>SIZE: {{ item.size }}</p>
+            {% endif %}
             <p>
                 
                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">

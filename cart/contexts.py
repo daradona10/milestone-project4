@@ -15,8 +15,9 @@ def cart_contents(request):
     
     for id, quantity in cart.items():
         product = get_object_or_404(Product, pk=id)
+        size = quantity_size[1]
         total += quantity * product.price
         product_count += quantity
-        cart_items.append({'id': id, 'quantity': quantity, 'product': product})
+        cart_items.append({'id': id, 'quantity': quantity, 'size': size, 'product': product})
     
     return {'cart_items': cart_items, 'total': total, 'product_count': product_count}

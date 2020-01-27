@@ -11,6 +11,7 @@
                 <p class="product-description">{{ product.description }}</p>
                 <p>PRICE {{ product.price }}</p>
                 <p>RATING {{ product.rating }}</p>
+                <p>SIZE {{ product.size }}</p>
 
                 <form method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
