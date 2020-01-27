@@ -6,6 +6,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.IntegerField()
+    category = models.CharField(max_length=100, default='')
     image = models.ImageField(upload_to='images')
 
 
