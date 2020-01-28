@@ -4,8 +4,7 @@ from .models import Product
 
 # Create your views here.
 def all_products(request):
-    products = Product.objects.all()
-    return render(request, "products.html", {"products": products})
+    return render(request, "home.html")
 
 def all_jerseys(request):
     products = Product.objects.filter(category='jersey')
@@ -26,4 +25,3 @@ def all_base_layers(request):
 def all_footballs(request):
     products = Product.objects.filter(category='football')
     return render(request, "products.html", {"products": products})
-

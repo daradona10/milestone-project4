@@ -11,11 +11,18 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% block head_js %}
     {% endblock head_js %}
+    <style>
+
+    </style>
 </head>
 <body>
     <!-- Fixed masthead -->
+    {% block extra_js %}
+    {% endblock extra_js %}
+    {% block home_page %} {% endblock home_page %}
     <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -31,6 +38,10 @@
                 <a class="navbar-brand" href="/products/socks/">Socks</a>
                 <a class="navbar-brand" href="/products/base_layers/">Base Layers</a>
                 <a class="navbar-brand" href="/products/footballs/">Footballs</a>
+                <form action="{% url 'search' %}" method="get" style="float:left; margin-top: 1em; margin-left: 8em;">
+                    <input type="text" name="q">
+                    <button type="search" class="btn btn-sm btn-success">Search</button>
+                </form>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -62,83 +73,20 @@
             </div>
         </div>
     {% endif %}
-    <div class="container">
-        <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="search">Search</button>
-            </form>
-        </div>
+    <div class="container" style="margin-bottom: 10em;">
         {% block content %} {% endblock %}
     </div>
-    <footer>
-        <div class="container">
-        <div class="row nav-footer-color">
-			<div class="col-sm-4">
-				<h5 class="footer-headings uppercase">Info</h5>
-				<div class="footer-center">
-					<div>
-						<i class="three-reasons-icon fa fa-map-marker"></i>
-						<p><span>Childers Retail Park,
-						Childers Road</span>
-							Limerick</p>
-					</div>
-					<div>
-						<i class="three-reasons-icon fa fa-phone"></i>
-						<p>061 412 455</p>
-					</div>
-					<div>
-						<i class=" three-reasons-icon fa fa-envelope"></i>
-						<p><a href="mailto:getfit@gymflex.ie">getfit@gymflex.ie</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<h5 class="footer-headings uppercase">Opening Hours</h5>
-				<h6>Monday - Friday</h6>
-				<p>6 am - 9 am</p>
-				<h6>Saturday - Sunday</h6>
-				<p>9 am - 6 pm</p>
-				<h6>Bank Holidays</h6>
-				<p>10 am - 4 pm</p>
-			</div>
-			<div class="col-sm-4">
-				<h5 class="footer-headings uppercase">Social Media</h5>
-				<p>Folow us on social media:</p>
-				<ul class="list-inline footer-links">
-					<li class="list-inline-item">
-						<a target="_blank" aria-label="Link to Facebook" rel="noopener"
-							href="https://www.facebook.com/PlanetHealthClubLimerick/">
-							<i class="fa fa-facebook" aria-hidden="true"></i>
-							<span class="sr-only">Facebook</span>
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a target="_blank" aria-label="Link to Twitter" rel="noopener"
-							href="https://twitter.com/planetlimerick1">
-							<i class="fa fa-twitter" aria-hidden="true"></i>
-							<span class="sr-only">Twitter</span>
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a target="_blank" aria-label="Link to YouTube" rel="noopener"
-							href="https://www.youtube.com/watch?v=RkzxJjSxJ7Q">
-							<i class="fa fa-youtube" aria-hidden="true"></i>
-							<span class="sr-only">YouTube</span>
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a target="_blank" aria-label="Link to Instagram" rel="noopener"
-							href="https://instagram.com/planethealthlimerick">
-							<i class="fa fa-instagram" aria-hidden="true"></i>
-							<span class="sr-only">Instagram</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-            <p>Made by Darragh Martin</p>
+    <div class="footer" style="z-index: 1000000; position: fixed; left: 0; bottom: 0; width: 100%; height: 7%; background-color: #2fa4e7; color: #fff; font-size: 1.1em; text-align: center;">
+        <div class="row mt-2" style="margin-top: 1em;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">Made by Darragh Martin</div>
+            <div class="col-md-4" style="font-size: 2em; margin-top: -0.3em;">
+                <a style="color: #fff;" href="https://facebook.com"><i class="fa fa-facebook-square"></i></a>
+                <a style="color: #fff;"  href="https://twitter.com"><i class="fa fa-twitter-square"></i></a>
+                <a style="color: #fff;"  href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+                <a style="color: #fff;"  href="https://linkedin.com"><i class="fa fa-linkedin-square"></i></a>
+            </div>
         </div>
-    </footer>
+    </div>
 </body>
 </html>
