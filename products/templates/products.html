@@ -17,19 +17,30 @@
 
                 <h3>{{ product.name }}</h3>
                 <p class="product-description">{{ product.description }}</p>
-                <p>PRICE {{ product.price }}</p>
-                <p>RATING {{ product.rating }}</p>
-                {% if product.category == 'jersey' or product.category == 'shorts' or product.category == 'socks' or product.category == 'base_layer' %}
-                    <p>SIZE:
-                        <select class="product_size" onchange="getVal(this)">
+                <table class="table">
+                    <tr>
+                        <td colspan="1">PRICE</td>
+                        <td colspan="2">€ {{ product.price }}</td>
+                    </tr>
+                    <tr>
+                        <td>RATING</td>
+                        <td>{{ product.rating }}</td>
+                    </tr>
+                    {% if product.category == 'jersey' or product.category == 'shorts' or product.category == 'socks' or product.category == 'base_layer' %}
+                    <tr>
+                        <td>SIZE</td>
+                        <td>
+                            <select class="product_size" onchange="getVal(this)">
                             <option>XS</option>
                             <option>S</option>
                             <option>M</option>
                             <option>L</option>
                             <option>XL</option>
                         </select>
-                    </p>
-                {% endif %}
+                        </td>
+                    </tr>
+                    {% endif %}
+                </table>
 
                 <form method="post" action="{% url 'add_to_cart' product.id %}" class="add_to_cart_form">
                     {% csrf_token %}
@@ -37,7 +48,7 @@
                         <input id="item_size" type="hidden" name="size" type="text" class="form-control" value="XS">
                         <input name="quantity" type="number" min="1" max="20" class="form-control" placeholder="Quantity">
                         <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
+                            <button class="btn btn-success" type="submit">Add To Cart</button>
                         </span>
                     </div>
                 </form>

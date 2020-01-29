@@ -15,7 +15,20 @@
     {% block head_js %}
     {% endblock head_js %}
     <style>
+        .my-nav-item:hover {
+            background-color: #2b8bc2;
+        }
 
+        .my-nav-item {
+            margin-left: 5px;
+            margin-right: 5px;
+            font-size: 1.2em;
+        }
+
+        #app-name {
+            font-weight: bold;
+            font-weight: 2em;
+        }
     </style>
 </head>
 <body>
@@ -32,12 +45,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Football World</a>
-                <a class="navbar-brand" href="/products/jerseys/">Jerseys</a>
-                <a class="navbar-brand" href="/products/shorts/">Shorts</a>
-                <a class="navbar-brand" href="/products/socks/">Socks</a>
-                <a class="navbar-brand" href="/products/base_layers/">Base Layers</a>
-                <a class="navbar-brand" href="/products/footballs/">Footballs</a>
+                <a id="app-name" class="navbar-brand my-nav-item" href="/">Football World</a>
+                <a class="navbar-brand my-nav-item" href="/products/jerseys/">Jerseys</a>
+                <a class="navbar-brand my-nav-item" href="/products/shorts/">Shorts</a>
+                <a class="navbar-brand my-nav-item" href="/products/socks/">Socks</a>
+                <a class="navbar-brand my-nav-item" href="/products/base_layers/">Base Layers</a>
+                <a class="navbar-brand my-nav-item" href="/products/footballs/">Footballs</a>
                 <form action="{% url 'search' %}" method="get" style="float:left; margin-top: 1em; margin-left: 8em;">
                     <input type="text" name="q">
                     <button type="search" class="btn btn-sm btn-success">Search</button>
