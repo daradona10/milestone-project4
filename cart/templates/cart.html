@@ -7,39 +7,81 @@
     {% for item in cart_items %}
     
     <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
-        
-        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-        
-        <div class="caption">
-            <h3>{{ item.product.name }}</h3>
-            <p class="product-description">{{ item.product.description }}</p>
-            <p>PRICE: {{ item.product.price }}</p>
-            {% if product.category == 'jersey' or product.category == 'shorts' or product.category == 'socks' or product.category == 'base_layer' %}
-                <p>SIZE: {{ item.size }}</p>
-            {% endif %}
-            <p>
-                
-                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="exampleInputAmount" class="sr-only">New Qty</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">Qty</div>
-                            <input name="quantity" type="number" min="0" max="999" class="form-control">
-                            <div class="input-group-addon">{{item.quantity}}</div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
-                </form>
-            </p>
+        <div class="panel-body" style="padding-bottom: 0;">
+            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+
+            <div class="caption">
+                <h3>{{ item.product.name }}</h3>
+                <p class="product-description">{{ item.product.description }}</p>
+
+                <table class="table table-borderless">
+                    <tr>
+                        <td colspan="1">PRICE</td>
+                        <td colspan="2">€ {{ item.product.price }}</td>
+                    </tr>
+                    {% if item.product.category == 'jersey' or item.product.category == 'shorts' or item.product.category == 'socks' or product.category == 'base_layer' %}
+                    <tr>
+                        <td>SIZE</td>
+                        <td>{{ item.size }}</td>
+                    </tr>
+                    {% endif %}
+                    <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                        {% csrf_token %}
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">Qty</div>
+                                        <input name="quantity" type="number" min="0" max="999" class="form-control">
+                                        <div class="input-group-addon">{{item.quantity}}</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
         </div>
     </div>
     {% endfor %}
 </div>
+{% if cart_items %}
 <div class="row">
-    <p>Total</p>
-    <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
-    <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+    <div class="col-md-5 col-sm-5">
+        <table class="table table-bordered table-dark">
+            <tr>
+                <th colspan="2" style="text-align: center; font-weigh: bold; font-size: 1.5em; color: #878787;">Price Details</th>
+            </tr>
+            <tr>
+                <th>Total Items</th>
+                <td>{{ product_count }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td><b>€</b> {{ total }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a style="width:60%; " href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> CHECKOUT</a></td>
+            </tr>
+        </table>
+    </div>
 </div>
+{% else %}
+<div class="row row-flex">
+    <div class="col-md-4 col-sm-4"></div>
+    <div class="col-md-4 col-sm-4 display panel panel-display" style="text-align: center; color: #878787; font-size: 1.5em;">
+        <div>
+            <div class="product" style="background-image: url('{{ MEDIA_URL }}images/empty-cart.png')"></div>
+            <p>Your cart is empty!</p>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4"></div>
+</div>
+{% endif %}
 
 {% endblock %}
