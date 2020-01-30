@@ -61,7 +61,7 @@
                     {% endif %}
                     <li>
                         <a href="{% url 'view_cart' %}">
-                            <i class="fa fa-shipping-cart"></i>Cart
+                            <i class="fa fa-shopping-cart"></i>Cart
                             {% if product_count > 0 %}
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
@@ -84,8 +84,9 @@
         {% block content %} {% endblock %}
     </div>
     <div class="footer" id="my-footer">
-        <div class="row mt-2" style="margin-top: 0.9em;">
+        <div class="row mt-2" style="margin-top: 0.9em;"> 
             <div class="col-md-4"></div>
+            <div class="col-md-4">This site is created for educational purposes only.</div>
             <div class="col-md-4">Made by Darragh Martin</div>
             <div class="col-md-4" id="footer-social-icons">
                 <a style="color: #fff;" href="https://facebook.com"><i class="fa fa-facebook-square"></i></a>

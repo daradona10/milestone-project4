@@ -131,11 +131,11 @@ caption p {
 }
 
 .home-page-cards {
-    background-color: #3a8203; margin-top: 3em; padding: 1em 0 1em 0; font-size: 2em;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background-color: #9ACD32; margin-top: 3em; padding: 1em 0 1em 0; font-size: 2em;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 #home-page-cards-container {
-    color: #fff; margin-top: 50%; background-color: #20920e; padding-bottom: 16em; text-align: center;
+    color: #fff; margin-top: 50%; background-color: #006400; padding-bottom: 16em; text-align: center;
 }
 
 #home-page-cards-container a {
@@ -148,5 +148,5 @@ caption p {
 
 .home-page-cards:hover {
     text-decoration: none;
-    background-color: #20920e;
+    background-color: #3CB371;
 }
