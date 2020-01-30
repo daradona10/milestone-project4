@@ -135,8 +135,9 @@ caption p {
 }
 
 #home-page-cards-container {
-    color: #fff; margin-top: 70%; background-color: #20920e; padding-bottom: 12em; text-align: center;
+    color: #fff; margin-top: 50%; background-color: #20920e; padding-bottom: 16em; text-align: center;
 }
+
 #home-page-cards-container a {
     color: #fff;
 }
