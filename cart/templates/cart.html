@@ -2,6 +2,18 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 
+{% block head_css %}
+<style>
+    body {
+        background-image: '';
+    }
+
+    #bottom-container {
+        padding-bottom: 10em;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="row row-flex">
     {% for item in cart_items %}
@@ -19,7 +31,7 @@
                         <td colspan="1">PRICE</td>
                         <td colspan="2">€ {{ item.product.price }}</td>
                     </tr>
-                    {% if item.product.category == 'jersey' or item.product.category == 'shorts' or item.product.category == 'socks' or product.category == 'base_layer' %}
+                    {% if item.product.category == 'jersey' or item.product.category == 'shorts' or item.product.category == 'socks' or item.product.category == 'base_layer' %}
                     <tr>
                         <td>SIZE</td>
                         <td>{{ item.size }}</td>
@@ -39,7 +51,7 @@
                                 </div>
                             </td>
                             <td>
-                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit</button>
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
                             </td>
                         </tr>
                     </form>
@@ -54,7 +66,7 @@
     <div class="col-md-5 col-sm-5">
         <table class="table table-bordered table-dark">
             <tr>
-                <th colspan="2" style="text-align: center; font-weigh: bold; font-size: 1.5em; color: #878787;">Price Details</th>
+                <th colspan="2" class="price-details-text">Price Details</th>
             </tr>
             <tr>
                 <th>Total Items</th>
@@ -74,7 +86,7 @@
 {% else %}
 <div class="row row-flex">
     <div class="col-md-4 col-sm-4"></div>
-    <div class="col-md-4 col-sm-4 display panel panel-display" style="text-align: center; color: #878787; font-size: 1.5em;">
+    <div class="col-md-4 col-sm-4 display panel panel-display" id="empty-cart">
         <div>
             <div class="product" style="background-image: url('{{ MEDIA_URL }}images/empty-cart.png')"></div>
             <p>Your cart is empty!</p>

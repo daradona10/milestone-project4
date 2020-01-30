@@ -7,29 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Football World</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="/static/css/custom.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block head_css %}
+    {% endblock head_css %}
+
     {% block head_js %}
     {% endblock head_js %}
-    <style>
-        .my-nav-item:hover {
-            background-color: #2b8bc2;
-        }
-
-        .my-nav-item {
-            margin-left: 5px;
-            margin-right: 5px;
-            font-size: 1.2em;
-        }
-
-        #app-name {
-            font-weight: bold;
-            font-weight: 2em;
-        }
-    </style>
 </head>
 <body>
     <!-- Fixed masthead -->
@@ -45,18 +32,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a id="app-name" class="navbar-brand my-nav-item" href="/">Football World</a>
-                <a class="navbar-brand my-nav-item" href="/products/jerseys/">Jerseys</a>
-                <a class="navbar-brand my-nav-item" href="/products/shorts/">Shorts</a>
-                <a class="navbar-brand my-nav-item" href="/products/socks/">Socks</a>
-                <a class="navbar-brand my-nav-item" href="/products/base_layers/">Base Layers</a>
-                <a class="navbar-brand my-nav-item" href="/products/footballs/">Footballs</a>
-                <form action="{% url 'search' %}" method="get" style="float:left; margin-top: 1em; margin-left: 8em;">
-                    <input type="text" name="q">
-                    <button type="search" class="btn btn-sm btn-success">Search</button>
-                </form>
+                <a id="app-name" class="navbar-brand my-nav-item" href="/">
+                    <i class="fa fa-futbol-o"></i>
+                    Football World
+                </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a class="my-nav-item" href="/products/jerseys/">Jerseys</a></li>
+                    <li><a class="my-nav-item" href="/products/shorts/">Shorts</a></li>
+                    <li><a class="my-nav-item" href="/products/socks/">Socks</a></li>
+                    <li><a class="my-nav-item" href="/products/base_layers/">Base Layers</a></li>
+                    <li><a class="my-nav-item" href="/products/footballs/">Footballs</a></li>
+                    <li>
+                        <form action="{% url 'search' %}" method="get" style="float:left; margin-top: 1em; margin-left: 1em;">
+                            <input type="text" name="q">
+                            <button type="search" class="btn btn-sm btn-success">Search</button>
+                        </form>
+                    </li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
@@ -67,7 +61,7 @@
                     {% endif %}
                     <li>
                         <a href="{% url 'view_cart' %}">
-                            <i class="fa fa-shopping-cart"></i>Cart
+                            <i class="fa fa-shipping-cart"></i>Cart
                             {% if product_count > 0 %}
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
@@ -86,14 +80,14 @@
             </div>
         </div>
     {% endif %}
-    <div class="container" style="margin-bottom: 10em;">
+    <div class="container" id="bottom-container">
         {% block content %} {% endblock %}
     </div>
-    <div class="footer" style="z-index: 1000000; position: fixed; left: 0; bottom: 0; width: 100%; height: 7%; background-color: #2fa4e7; color: #fff; font-size: 1.1em; text-align: center;">
-        <div class="row mt-2" style="margin-top: 1em;">
+    <div class="footer" id="my-footer">
+        <div class="row mt-2" style="margin-top: 0.9em;">
             <div class="col-md-4"></div>
             <div class="col-md-4">Made by Darragh Martin</div>
-            <div class="col-md-4" style="font-size: 2em; margin-top: -0.3em;">
+            <div class="col-md-4" id="footer-social-icons">
                 <a style="color: #fff;" href="https://facebook.com"><i class="fa fa-facebook-square"></i></a>
                 <a style="color: #fff;"  href="https://twitter.com"><i class="fa fa-twitter-square"></i></a>
                 <a style="color: #fff;"  href="https://instagram.com"><i class="fa fa-instagram"></i></a>
@@ -101,5 +95,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

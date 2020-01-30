@@ -1,8 +1,41 @@
 {% extends 'base.html' %}
 
+{% block head_css %}
+<style>
+    body {
+        background-image: url('/media/images/football.jpg');
+        background-repeat: no-repeat;
+    }
+
+    #bottom-container {
+        padding-bottom: 0;
+    }
+</style>
+{% endblock %}
+
 {% block home_page %}
-<!--<div id="home-page" style="background-image: url('/media/images/football.jpg'); width: 100%; height: 100%;">-->
-<div style="width: 100%; height: 100%; position: fixed; top: 0;">
-    <img style="max-width: 100%; margin-bottom: 10em;" src="{{ MEDIA_URL }}images/football.jpg">
+
+<div id="home-page-cards-container">
+	<section class="container-fluid navigation-container" style="text-align: center;">
+		<div class="row">
+            <div class="col-md-1 col-sm-12">
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <a href="/products/jerseys/"><div class="card home-page-cards">Jerseys</div></a>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <a href="/products/shorts/"><div class="card home-page-cards">Shorts</div></a>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <a href="/products/socks/"><div class="card home-page-cards">Socks</div></a>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <a href="/products/base_layers/"><div class="card home-page-cards">Base Layers</div></a>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <a href="/products/footballs/"><div class="card home-page-cards">Footballs</div></a>
+            </div>
+        </div>
+	</section>
 </div>
 {% endblock %}

@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
 
+{% block head_css %}
+<style>
+    body {
+        background-image: '';
+    }
+
+    #bottom-container {
+        padding-bottom: 10em;
+    }
+</style>
+{% endblock %}
+
 {% block head_js %}
 <script type="text/javascript">
     function getVal(sel) {
