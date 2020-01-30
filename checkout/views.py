@@ -15,7 +15,7 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):
-    if request.method=="POST":
+    if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
 
@@ -28,20 +28,26 @@ def checkout(request):
             total = 0
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
+                print(quantity)
+                print(type(quantity))
+                print(product.price)
+                print(type(product.price))
+                total += quantity[0] * product.price
                 order_line_item = OrderLineItem(
-                    order = order,
-                    product = product,
-                    quantity = quantity
+                    order=order,
+                    product=product,
+                    quantity=quantity[0]
                 )
+                print(order_line_item)
+                print(type(order_line_item))
                 order_line_item.save()
 
             try:
                 customer = stripe.Charge.create(
-                    amount = int(total * 100),
-                    currency = "EUR",
-                    description = request.user.email,
-                    card = payment_form.cleaned_data['stripe_id'],
+                    amount=int(total * 100),
+                    currency="EUR",
+                    description=request.user.email,
+                    card=payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
@@ -58,5 +64,5 @@ def checkout(request):
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
-
-    return render(request, "checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
+    
+    return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
