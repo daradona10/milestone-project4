@@ -108,7 +108,8 @@ Testing for the site was performed as follows:
 The HTML file was not passed through the W3C HTML Validation site, due to the use of the Dajngo Template Framework, many errors and warnings raised.
 The custom.css file was tested using the W3C CSS Validation site, with no errors reported.
 
-The site was tested on Google Chrome (desktop and mobile through dev tools), and Safari (mobile only iPhone6) for functionality. Verified working well.
+The site was tested on Google Chrome (desktop and mobile ), and Safari (mobile only iPhone6) for functionality. Verified working well although some footer problems
+wasn't showing up on all mobile devices.
 
 ## Deployment
 
