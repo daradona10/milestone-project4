@@ -1,7 +1,7 @@
 
 # Milestone Project 4: Football World Website:
 
-The deployed website can be accessed from here(Heroku): []
+The deployed website can be accessed from here(Heroku): [https://daradona10-milestoneproject4.herokuapp.com/]
 
 Travis Continuous Integration Testing: [![Build Status](https://travis-ci.org/daradona10/milestone-project4.svg?branch=master)](https://travis-ci.org/daradona10/milestone-project4)
 
@@ -114,43 +114,43 @@ The site was tested on Google Chrome (desktop and mobile through dev tools), and
 
 This project is deployed on Heroku and GitHub and is accessible as follows:
 
-- Website: []
-- Repository: []
+- Website: [https://daradona10-milestoneproject4.herokuapp.com/]
+- Repository: [https://bd2d71ad-6b5f-4c45-89cd-22bdcbceb832.ws-eu01.gitpod.io/#/workspace/milestone-project4]
 
 
 For this project I used the GitPod IDE platform. The platform allowed me to commit my pages (and changes) to Git, following which it was pushed through to the GitHub repository.
 
 This website can be locally deployed from GitHub by following the method outlined below:
 
-Use the following link to access the project repository: GitHub.
-Click on the Clone or Download button, under the repository name.
-Copy the clone URL for the repository, found in the Clone with HTTPS section.
-Open Git Bash in your local IDE environment.
-Select the location to where the cloned directory must be made.
-Input git clone together with the copied clone URL into Git Bash and press Enter.
-Create an env.py file in the project directory and set environmental variables for your working environment, which should include the following:
-os.environ.setdefault("HOSTNAME", "Your Hostname")
-os.environ.setdefault("SECRET_KEY", "Your Secret key")
-os.environ.setdefault("EMAIL_ADDRESS", "Your site Email address")
-os.environ.setdefault("EMAIL_PASSWORD", "Your site Email password")
-os.environ.setdefault("STRIPE_PUBLISHABLE", "Your Stripe publishable key")
-os.environ.setdefault("STRIPE_SECRET", "Your Stripe secret key")
-os.environ.setdefault("DATABASE_URL", "Your Postgres database url")
-os.environ.setdefault("AWS_ACCESS_KEY_ID", "Your AWS access key")
-os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "Your AWS secret acess key")
-For the above environmental variables, you will be required to create/provide account details, which include:
-Stripe: Register an account and obtain the relevant keys (for testing environments)
-AWS: -- S3: Create the relevant buckets in order to store static and media files, obtain relevant credentials. -- IAM: Set the relevant permissions and accesses
-PostGres: Access can be created once the project is deployed to Heroku, by creating a new app and creating a Heroku PostGres resource under the Resources tab. The DATABASE_URL can be obtained from the Config Vars under the Settings tab.
-Note that if this is not done, the app will revert to a SQLite database.
-Never publish or push the env.py to public repositories.
-The website can be deployed to and from Heroku by following the next steps:
+- Use the following link to access the project repository: GitHub.
+- Click on the Clone or Download button, under the repository name.
+- Copy the clone URL for the repository, found in the Clone with HTTPS section.
+- Open Git Bash in your local IDE environment.
+- Select the location to where the cloned directory must be made.
+- Input git clone together with the copied clone URL into Git Bash and press Enter.
+- Create an env.py file in the project directory and set environmental variables for your working environment, which should include the following:
+- os.environ.setdefault("HOSTNAME", "Your Hostname")
+- os.environ.setdefault("SECRET_KEY", "Your Secret key")
+- os.environ.setdefault("EMAIL_ADDRESS", "Your site Email address")
+- os.environ.setdefault("EMAIL_PASSWORD", "Your site Email password")
+- os.environ.setdefault("STRIPE_PUBLISHABLE", "Your Stripe publishable key")
+- os.environ.setdefault("STRIPE_SECRET", "Your Stripe secret key")
+- os.environ.setdefault("DATABASE_URL", "Your Postgres database url")
+- os.environ.setdefault("AWS_ACCESS_KEY_ID", "Your AWS access key")
+- os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "Your AWS secret acess key")
+- For the above environmental variables, you will be required to create/provide account details, which include:
+- Stripe: Register an account and obtain the relevant keys (for testing environments)
+- AWS: -- S3: Create the relevant buckets in order to store static and media files, obtain relevant credentials. -- IAM: Set the relevant permissions and accesses
+- PostGres: Access can be created once the project is deployed to Heroku, by creating a new app and creating a Heroku PostGres resource under the Resources tab. The DATABASE_URL can be obtained from the Config Vars under the Settings tab.
+- Note that if this is not done, the app will revert to a SQLite database.
+- Never publish or push the env.py to public repositories.
+- The website can be deployed to and from Heroku by following the next steps:
 
-Go to the Heroku website to sign up. Create a new project by clicking the New button.
-Download and install the Heroku CLI in your IDE.
-Connect your GitHub to your account in the deploy section on Heroku
-Make sure that the relevant environmental variables is set under the Config Vars section under the Settings tab.
-The deployed version on Heroku is the same as the development version.
+- Go to the Heroku website to sign up. Create a new project by clicking the New button.
+- Download and install the Heroku CLI in your IDE.
+- Connect your GitHub to your account in the deploy section on Heroku
+- Make sure that the relevant environmental variables is set under the Config Vars section under the Settings tab.
+- The deployed version on Heroku is the same as the development version.
 
 # Credits:
 
