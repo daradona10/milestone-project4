@@ -97,7 +97,7 @@ caption p {
 
 .price-details-text {
     text-align: center;
-    font-weigh: bold;
+    font-weight: bold;
     font-size: 1.5em;
     color: #878787;
 }
@@ -114,7 +114,7 @@ caption p {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 10%;
+    height: 100px;
     background-color: #1E90FF;
     color: #fff;
     font-size: 1.1em;
@@ -151,10 +151,5 @@ caption p {
     background-color: #3CB371;
 }
 
-/*media queries for larger viewports*/
 
-@media (min-width:992px) {
-    .navbar-brand img {
-        border: 3px solid;
-        max-width: 100px;
-    }
+
