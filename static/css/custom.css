@@ -150,3 +150,11 @@ caption p {
     text-decoration: none;
     background-color: #3CB371;
 }
+
+/*media queries for larger viewports*/
+
+@media (min-width:992px) {
+    .navbar-brand img {
+        border: 3px solid;
+        max-width: 100px;
+    }
