@@ -115,7 +115,7 @@ The site was tested on Google Chrome (desktop and mobile through dev tools), and
 This project is deployed on Heroku and GitHub and is accessible as follows:
 
 - Website: [https://daradona10-milestoneproject4.herokuapp.com/]
-- Repository: [https://bd2d71ad-6b5f-4c45-89cd-22bdcbceb832.ws-eu01.gitpod.io/#/workspace/milestone-project4]
+- Repository: [https://github.com/daradona10/milestone-project4]
 
 
 For this project I used the GitPod IDE platform. The platform allowed me to commit my pages (and changes) to Git, following which it was pushed through to the GitHub repository.
