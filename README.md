@@ -171,7 +171,7 @@ The deployed version on Heroku is the same as the development version.
 # Acknowledgements:
 
 - I would like to thank my mentor, Brian Macharia for input provided during the development of the site.
-- I would to thank all the Code Institute tutors especially to Samantha 
+- I would to thank all the Code Institute tutors especially to Samantha Dartnall who helped me numerous times with some complex issues.
 - I want to thank my main tutor Xavier for a lot of help
 - To my fellow peers in my group who guided me also
 - To a lot of people in the Slack community also
